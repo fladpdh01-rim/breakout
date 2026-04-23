@@ -15,7 +15,16 @@ const PADDLE_HEIGHT = 10;
 const BALL_RADIUS = 6;
 const LIVES_START = 3;
 
-// USER: 여기에 제작자 정보를 입력하세요
+interface Brick {
+  x: number;
+  y: number;
+  status: number;
+  color: string;
+  isRed: boolean;
+  w?: number;
+  h?: number;
+}
+
 const CREATOR_INFO = '20260190 세무회계학과 오예림';
 
 export default function BreakoutGame() {
@@ -109,7 +118,7 @@ export default function BreakoutGame() {
     setTimer(0);
     
     // Init bricks
-    const bricks = [];
+    const bricks: Brick[][] = [];
     const colors = ['#FDA4AF', '#FED7AA', '#FEF08A', '#BFDBFE', '#BBF7D0', '#E9D5FF']; // Light Red, Orange, Yellow, Blue, Green, Purple
     
     for (let r = 0; r < BRICK_ROWS; r++) {
