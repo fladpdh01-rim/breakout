@@ -50,7 +50,6 @@ export default function BreakoutGame() {
     timer: 0,
     leftPressed: false,
     rightPressed: false,
-    lastTime: 0,
   });
 
   const audioCtx = useRef<AudioContext | null>(null);
